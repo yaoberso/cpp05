@@ -10,12 +10,8 @@
 
 int main() {
     std::srand(std::time(nullptr)); // pour RobotomyRequestForm
-
-    // ─────────────── Bureaucrats ───────────────
     Bureaucrat alice("Alice", 1);   // Très haut grade
     Bureaucrat bob("Bob", 150);     // Très bas grade
-
-    // ─────────────── Forms ───────────────
     ShrubberyCreationForm shrub("home");
     RobotomyRequestForm robo("Bender");
     PresidentialPardonForm pardon("Marvin");
@@ -30,9 +26,9 @@ int main() {
     alice.signForm(robo);
     alice.signForm(pardon);
 
-    bob.signForm(shrub);   // doit échouer
-    bob.signForm(robo);    // doit échouer
-    bob.signForm(pardon);  // doit échouer
+    bob.signForm(shrub);
+    bob.signForm(robo);
+    bob.signForm(pardon);
 
     std::cout << "\n--- Status des formulaires après signature ---\n";
     std::cout << shrub << std::endl;
@@ -44,9 +40,9 @@ int main() {
     alice.executeForm(robo);
     alice.executeForm(pardon);
 
-    bob.executeForm(shrub);   // doit échouer
-    bob.executeForm(robo);    // doit échouer
-    bob.executeForm(pardon);  // doit échouer
+    bob.executeForm(shrub);
+    bob.executeForm(robo);
+    bob.executeForm(pardon);
 
     return 0;
 }
