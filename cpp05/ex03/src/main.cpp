@@ -11,9 +11,11 @@
 
 int main() 
 {
+    Bureaucrat a;
     Intern someRandomIntern;
     AForm* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    rrf->execute(a);
 }
 
 
