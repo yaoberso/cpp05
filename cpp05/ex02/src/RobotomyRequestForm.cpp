@@ -33,7 +33,12 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const 
 {
     checkRequirements(executor);
-    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    srand(time(0));
+    int val = rand() % 2;
+    if (val == 0)
+        std::cout << _target << "has been robotomized successfull" << std::endl;
+    else
+        std::cout << _target << "has been robotomized failed" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const RobotomyRequestForm &f)
